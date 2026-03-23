@@ -1,0 +1,32 @@
+[
+  {
+    "analyticEventName": "EMB_E_1-2-3_N2",
+    "cameraId": "cam-001",
+    "weight": 3,
+    "description": "Embotellamiento entrada vías 1-2-3 nivel 2"
+  },
+  {
+    "analyticEventName": "EMB_S_4-5_N1",
+    "cameraId": "cam-002",
+    "weight": 2,
+    "description": "Embotellamiento salida vías 4-5 nivel 1"
+  },
+  {
+    "analyticEventName": "EMB_E_6_N3",
+    "cameraId": "cam-003",
+    "weight": 1,
+    "description": "Embotellamiento entrada vía 6 nivel 3 (poco frecuente)"
+  },
+  {
+    "analyticEventName": "VIA_1",
+    "cameraId": "cam-004",
+    "weight": 5,
+    "description": "Vehículo entrando"
+  },
+  {
+    "analyticEventName": "VIA_2",
+    "cameraId": "cam-005",
+    "weight": 5,
+    "description": "Vehículo saliendo"
+  }
+]
