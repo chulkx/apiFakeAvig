@@ -8,6 +8,11 @@ export type SimulateMode = 'random' | 'sequential' | 'burst';
 export interface Scenario {
   analyticEventName: string;
   cameraId: string;
+  type?: string;
+  thisId?: string;
+  linkedEventId?: string;
+  originatingEventId?: string;
+  timestamp?: string;
   weight?: number;
   description?: string;
 }
@@ -122,6 +127,11 @@ class Simulator {
     const inputs: EventInput[] = events.map((s) => ({
       analyticEventName: s.analyticEventName,
       cameraId: s.cameraId,
+      type: s.type,
+      thisId: s.thisId,
+      linkedEventId: s.linkedEventId,
+      originatingEventId: s.originatingEventId,
+      timestamp: s.timestamp,
     }));
     const payload = buildNotification(inputs);
     const result = await sendToTarget(payload);

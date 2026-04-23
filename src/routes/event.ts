@@ -5,7 +5,7 @@ import { sendToTarget } from '../sender';
 const router = Router();
 
 router.post('/', async (req: Request, res: Response) => {
-  const { analyticEventName, cameraId, timestamp, id } = req.body ?? {};
+  const { analyticEventName, cameraId, timestamp, id, type, thisId, linkedEventId, originatingEventId } = req.body ?? {};
 
   if (typeof analyticEventName !== 'string' || !analyticEventName) {
     res.status(400).json({ error: 'analyticEventName is required' });
@@ -16,7 +16,16 @@ router.post('/', async (req: Request, res: Response) => {
     return;
   }
 
-  const payload = buildNotification([{ analyticEventName, cameraId, timestamp, id }]);
+  const payload = buildNotification([{
+    analyticEventName,
+    cameraId,
+    timestamp,
+    id,
+    type,
+    thisId,
+    linkedEventId,
+    originatingEventId,
+  }]);
   const result = await sendToTarget(payload);
 
   res.status(result.success ? 201 : 502).json(result);

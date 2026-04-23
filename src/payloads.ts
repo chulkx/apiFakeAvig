@@ -5,11 +5,26 @@ export interface EventInput {
   cameraId: string;
   id?: string;
   timestamp?: string;
+  type?: string;
+  thisId?: string;
+  linkedEventId?: string;
+  originatingEventId?: string;
 }
 
 export interface AvigilonPayload {
   type: string;
-  notifications?: Array<{ event: { id: string; analyticEventName: string; cameraId: string; timestamp: string } }>;
+  notifications?: Array<{
+    event: {
+      id: string;
+      analyticEventName: string;
+      cameraId: string;
+      timestamp: string;
+      type?: string;
+      thisId?: string;
+      linkedEventId?: string;
+      originatingEventId?: string;
+    }
+  }>;
 }
 
 export function buildNotification(events: EventInput[]): AvigilonPayload {
@@ -21,6 +36,10 @@ export function buildNotification(events: EventInput[]): AvigilonPayload {
         analyticEventName: e.analyticEventName,
         cameraId: e.cameraId,
         timestamp: e.timestamp ?? new Date().toISOString(),
+        type: e.type,
+        thisId: e.thisId,
+        linkedEventId: e.linkedEventId,
+        originatingEventId: e.originatingEventId,
       },
     })),
   };
