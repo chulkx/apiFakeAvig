@@ -1,0 +1,52 @@
+[
+  {
+    "analyticEventName": "EMB_S_15_N1",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "10520885",
+    "linkedEventId": "-1",
+    "originatingEventId": "10520885",
+    "timestamp": "2026-04-22T20:47:40.804Z",
+    "description": "EMB via 15 start"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N1",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_STOP",
+    "thisId": "10520900",
+    "linkedEventId": "10520885",
+    "originatingEventId": "10520900",
+    "timestamp": "2026-04-22T20:47:54.801Z",
+    "description": "EMB via 15 stop"
+  },
+  {
+    "analyticEventName": "EMB_S_11-12_N2",
+    "cameraId": "cam-egreso-11-12",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "10520925",
+    "linkedEventId": "-1",
+    "originatingEventId": "10520925",
+    "timestamp": "2026-04-22T20:48:55.821Z",
+    "description": "EMB multivia start"
+  },
+  {
+    "analyticEventName": "EMB_S_11-12_N2",
+    "cameraId": "cam-egreso-11-12",
+    "type": "DEVICE_ANALYTICS_STOP",
+    "thisId": "10520941",
+    "linkedEventId": "10520925",
+    "originatingEventId": "10520941",
+    "timestamp": "2026-04-22T20:49:16.418Z",
+    "description": "EMB multivia stop"
+  },
+  {
+    "analyticEventName": "EMB_S_10_N1",
+    "cameraId": "cam-egreso-10",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "10520937",
+    "linkedEventId": "-1",
+    "originatingEventId": "10520937",
+    "timestamp": "2026-04-22T20:49:09.152Z",
+    "description": "EMB fallback without stop"
+  }
+]

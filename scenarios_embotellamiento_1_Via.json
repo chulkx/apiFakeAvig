@@ -1,0 +1,62 @@
+[
+  {
+    "analyticEventName": "EMB_S_15_N1",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "emb15n1-start",
+    "linkedEventId": "-1",
+    "originatingEventId": "emb15n1-start",
+    "timestamp": "2026-04-24T20:00:00.000Z",
+    "description": "via 15 start N1"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N2",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "emb15n2-start",
+    "linkedEventId": "-1",
+    "originatingEventId": "emb15n2-start",
+    "timestamp": "2026-04-24T20:00:02.000Z",
+    "description": "via 15 start N2"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N3",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_START",
+    "thisId": "emb15n3-start",
+    "linkedEventId": "-1",
+    "originatingEventId": "emb15n3-start",
+    "timestamp": "2026-04-24T20:00:04.000Z",
+    "description": "via 15 start N3"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N3",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_STOP",
+    "thisId": "emb15n3-stop",
+    "linkedEventId": "emb15n3-start",
+    "originatingEventId": "emb15n3-stop",
+    "timestamp": "2026-04-24T20:00:06.000Z",
+    "description": "via 15 stop N3"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N2",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_STOP",
+    "thisId": "emb15n2-stop",
+    "linkedEventId": "emb15n2-start",
+    "originatingEventId": "emb15n2-stop",
+    "timestamp": "2026-04-24T20:00:08.000Z",
+    "description": "via 15 stop N2"
+  },
+  {
+    "analyticEventName": "EMB_S_15_N1",
+    "cameraId": "cam-egreso-15",
+    "type": "DEVICE_ANALYTICS_STOP",
+    "thisId": "emb15n1-stop",
+    "linkedEventId": "emb15n1-start",
+    "originatingEventId": "emb15n1-stop",
+    "timestamp": "2026-04-24T20:00:10.000Z",
+    "description": "via 15 stop N1"
+  }
+]
