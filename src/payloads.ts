@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 
-export interface EventInput {
+export interface EventInput extends Record<string, unknown> {
   analyticEventName: string;
   cameraId: string;
   id?: string;
@@ -14,34 +14,25 @@ export interface EventInput {
 export interface AvigilonPayload {
   type: string;
   notifications?: Array<{
-    event: {
+    event: EventInput & {
       id: string;
-      analyticEventName: string;
-      cameraId: string;
       timestamp: string;
-      type?: string;
-      thisId?: string;
-      linkedEventId?: string;
-      originatingEventId?: string;
-    }
+    };
   }>;
 }
 
 export function buildNotification(events: EventInput[]): AvigilonPayload {
   return {
     type: 'NOTIFICATION',
-    notifications: events.map((e) => ({
-      event: {
-        id: e.id ?? randomUUID(),
-        analyticEventName: e.analyticEventName,
-        cameraId: e.cameraId,
-        timestamp: e.timestamp ?? new Date().toISOString(),
-        type: e.type,
-        thisId: e.thisId,
-        linkedEventId: e.linkedEventId,
-        originatingEventId: e.originatingEventId,
-      },
-    })),
+    notifications: events.map((e) => {
+      const event: EventInput & { id: string; timestamp: string } = {
+        ...e,
+        id: typeof e.id === 'string' && e.id ? e.id : randomUUID(),
+        timestamp: typeof e.timestamp === 'string' && e.timestamp ? e.timestamp : new Date().toISOString(),
+      };
+
+      return { event };
+    }),
   };
 }
 

@@ -5,7 +5,7 @@ import { sendToTarget } from './sender';
 
 export type SimulateMode = 'random' | 'sequential' | 'burst';
 
-export interface Scenario {
+export interface Scenario extends Record<string, unknown> {
   analyticEventName: string;
   cameraId: string;
   type?: string;
@@ -38,7 +38,7 @@ class Simulator {
   private scenariosFile: string;
 
   constructor() {
-    this.scenariosFile = path.resolve(process.cwd(), 'scenarios.json');
+    this.scenariosFile = path.resolve(process.cwd(), 'scenarios_embotellamiento_1_Via.json');
   }
 
   loadScenarios(filePath?: string): void {
@@ -124,15 +124,7 @@ class Simulator {
   }
 
   private async dispatch(events: Scenario[]): Promise<void> {
-    const inputs: EventInput[] = events.map((s) => ({
-      analyticEventName: s.analyticEventName,
-      cameraId: s.cameraId,
-      type: s.type,
-      thisId: s.thisId,
-      linkedEventId: s.linkedEventId,
-      originatingEventId: s.originatingEventId,
-      timestamp: s.timestamp,
-    }));
+    const inputs: EventInput[] = events.map((s) => ({ ...s }));
     const payload = buildNotification(inputs);
     const result = await sendToTarget(payload);
 
